@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+<meta charset="UTF-8"/>
+
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Calculator</title>
+<style>
+body{
+display:flex;
+justify-content:center;
+align-items:center;
+}
+.calculator{
+    display:inline-grid;
+    grid-template-columns:auto    auto auto auto; 
+    justify-content:center;
+    align-items:center;
+    background-color:gray;
+    width:auto;
+    height:auto;
+    border-radius:5vw;
+  }
+#sc{
+    font-size:10vw;
+    grid-column: 1 / span 4;
+    height:20vw;
+    width:76vw;    
+    border-radius:5vw;
+    margin-top:7vw;
+    margin-left:3.3vw;
+}
+button{
+    font-size:6vw;
+    margin:3vw;
+    width:15vw;
+    height:15vw;    
+    border-radius:2vw;
+}
+</style>
+</head>
+<body>
+	<div class="calculator">
+
+		<input id="sc" readonly >
+
+		<button id="b" onclick="append('1')">1</button>
+		<button id="b" onclick="append('2')">2</button>
+        <button id="b" onclick="append('3')">3</button>
+        <button id="b" onclick="append('4')">4</button>
+        <button id="b" onclick="append('5')">5</button>
+        <button id="b" onclick="append('6')">6</button>
+        <button id="b" onclick="append('7')">7</button>
+        <button id="b" onclick="append('8')">8</button>
+        <button id="b" onclick="append('9')">9</button>
+        <button id="b" onclick="append('0')">0</button>
+         <button id="b" onclick="append('.')">.</button>                   <button id="plus" onclick="append('+')">+</button>
+        <button id="plus" onclick="append('-')">-</button>
+        <button id="plus" onclick="append('*')">*</button>
+        <button id="plus" onclick="append('/')">/</button>
+        <button id="equal" onclick="calculate()">=</button>
+        <button id="clear" onclick="clearSc()">C</button>
+
+	</div>
+<script>
+const sc=document.getElementById("sc");
+function append(b) {
+sc.value+=b;
+}
+function calculate(){
+sc.value=eval(sc.value);
+}
+function clearSc(){
+sc.value="";
+}
+</script>
+
+</body>
+</html>
