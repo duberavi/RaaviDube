@@ -15,37 +15,52 @@ align-items:center;
 }
 .calculator{
     display:inline-grid;
-    grid-template-columns:auto    auto auto auto; 
+    grid-template-rows:auto auto; 
     justify-content:center;
     align-items:center;
     background-color:gray;
-    width:auto;
+    width:22rem;
     height:auto;
-    border-radius:5vw;
+    border-radius:1rem;
   }
 #sc{
-    font-size:10vw;
-    grid-column: 1 / span 4;
-    height:20vw;
-    width:76vw;    
-    border-radius:5vw;
-    margin-top:7vw;
-    margin-left:3.3vw;
+	display:flex; 
+    justify-content:center;
+    align-items:center;
+    padding:2rem;
+}
+#scr{
+    font-size:2rem;
+    height:6rem;
+    width:18rem;
+    padding:0.8rem;   
+    border-radius:1rem;
+    background-color:black;
+    color:white;
+}
+#btn{
+	display:inline-grid;
+    grid-template-columns:auto auto auto auto;   
+    padding:2rem;
+    justify-content:center;
 }
 button{
-    font-size:6vw;
-    margin:3vw;
-    width:15vw;
-    height:15vw;    
-    border-radius:2vw;
+    font-size:2rem;
+    margin:1rem;
+    width:3rem;
+    height:3rem;    
+    border-radius:0.5rem;
+    background-color:black;
+    color:white;
 }
 </style>
 </head>
 <body>
 	<div class="calculator">
-
-		<input id="sc" readonly >
-
+    <div id="sc">
+		<input id="scr"readonly >
+	</div>
+    <div id="btn">
 		<button id="b" onclick="append('1')">1</button>
 		<button id="b" onclick="append('2')">2</button>
         <button id="b" onclick="append('3')">3</button>
@@ -62,10 +77,10 @@ button{
         <button id="plus" onclick="append('/')">/</button>
         <button id="equal" onclick="calculate()">=</button>
         <button id="clear" onclick="clearSc()">C</button>
-
+</div>
 	</div>
 <script>
-const sc=document.getElementById("sc");
+const sc=document.getElementById("scr");
 function append(b) {
 sc.value+=b;
 }
